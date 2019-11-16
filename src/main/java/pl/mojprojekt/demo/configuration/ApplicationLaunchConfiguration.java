@@ -24,7 +24,7 @@ public class ApplicationLaunchConfiguration {
         }
 
         if(roleUser == null){
-            roleUser = new Role(1l, "USER");
+            roleUser = new Role(2l, "USER");
             roleRepository.save(roleUser);
         }
     }

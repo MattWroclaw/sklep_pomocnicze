@@ -13,5 +13,9 @@ public class UzytkownikDto {
 
     private String miasto;
 
-    private List<AdresDto> adresDto;
+    private AdresDto adresDtoDomowy;
+
+    private AdresDto adresDtoFaktura;
+
+    private AdresDto adresDtoWysylka;
 }

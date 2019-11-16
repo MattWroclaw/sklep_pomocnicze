@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Panel administratora</title>
 </head>
 <body>
-To jest panel admina
+To jest panel admina<br>
+Tutaj dodoajemy produkty
+
+
+<form action="#" th:action="@{/dodajProdukt}" method="post" th:object="${nowyProdukt}">
+    Tytuł: <input type="text" th:field="*{tytul}"><br>
+    Opis: <input type="text" th:field="*{opis}"><br>
+    url: <input type="text" th:field="*{urlObrazka}"><br>
+<!--    kategoria: <input type="hiden" th:field="*{kategoria.opis}">-->
+    Cena: <input type="text" th:field="*{cena}"><br>
+
+    Typ produktu  <select th:field="*{typProduktu}">
+                    <option th:text="DZIECKO" value="DZIECKO"></option>
+                    <option th:text="Książki" value="KSIAZKI"></option>
+                    <option th:text="Motoryzacja" value="MOTO"></option>
+                    <option th:text="Sport" value="SPORT"></option>
+
+                </select>
+
+    Stan magazynowy: <input type="text" th:field="*{stanMagazynowy}"><br>
+   <input type="submit" value="Dodaj produkt">
+</form>
+
+<table>
+    <tr>
+        <th>Tytuł</th>
+        <th>Opis</th>
+        <th>Obrazek</th>
+        <th>Cena</th>
+        <th>Typ Produktu</th>
+        <th>Stan magazynowy</th>
+    </tr>
+    <tr th:each="p : ${produkty}">
+        <td th:text="${p.tytul}"></td>
+        <td th:text="${p.opis}"></td>
+        <td th:text="${p.stanMagazynowy}"></td>
+    </tr>
+</table>
 </body>
 </html>

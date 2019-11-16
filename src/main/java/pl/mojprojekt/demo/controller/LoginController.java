@@ -38,8 +38,5 @@ public class LoginController {
         return "sklep";
     }
 
-    @GetMapping("/admin")
-    public String goAdmin(){
-        return "admin";
-    }
+
 }

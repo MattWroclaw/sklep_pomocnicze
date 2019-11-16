@@ -3,6 +3,7 @@ package pl.mojprojekt.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -16,7 +17,7 @@ public class LiniaZamowienia {
 
     @OneToMany
     @JoinColumn(name = "produkt_id")
-    private List<Produkt> produkt;
+    private List<Produkt> produkt = new ArrayList<>();
 
     private int iloscProduktow;
 

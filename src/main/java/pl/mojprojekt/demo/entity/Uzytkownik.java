@@ -25,7 +25,21 @@ public class Uzytkownik {
     @JoinTable(name = "uzytkownik_role", joinColumns = @JoinColumn(name = "uzytkownik_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "adres_id")
-    private List<Adres> adres;
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "adres_id")
+//    private List<Adres> adres;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "adresDomowy_id")
+    private Adres adresDomowy;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "adresWysylki_id")
+    private Adres adresWysylki;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "adresFakturowania_id")
+    private Adres adresFakturowania;
+
+
 }

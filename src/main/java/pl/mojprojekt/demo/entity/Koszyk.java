@@ -3,6 +3,7 @@ package pl.mojprojekt.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -20,5 +21,5 @@ public class Koszyk {
 
     @OneToMany
     @JoinColumn(name = "liniaZamowienia_id")
-    private List<LiniaZamowienia> linieZamowienia;
+    private List<LiniaZamowienia> linieZamowienia = new ArrayList<>();
 }
