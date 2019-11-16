@@ -21,7 +21,9 @@ public class Adres {
 
     private String kodPocztowy;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "uzytkownik_id")
-    private Uzytkownik uzytkownik;
+    TypAdresu typAdresu;
+
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "uzytkownik_id")
+//    private Uzytkownik uzytkownik;
 }

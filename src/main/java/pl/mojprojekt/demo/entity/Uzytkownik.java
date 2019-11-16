@@ -3,6 +3,7 @@ package pl.mojprojekt.demo.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -23,4 +24,8 @@ public class Uzytkownik {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "uzytkownik_role", joinColumns = @JoinColumn(name = "uzytkownik_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "adres_id")
+    private List<Adres> adres;
 }

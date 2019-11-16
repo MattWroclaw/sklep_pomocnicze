@@ -7,12 +7,10 @@
 <body>
 
 <form action="#" th:action="@{/formularzRejestracji}" th:object="${nowyUzytkownik}" method="post">
-    email (który będzie twoim loginem): <input type="text" th:field="*{uzytkownikDto.loginMail}">
-    hasło: <input type="text" th:field="*{uzytkownikDto.haslo}">
-    miasto: <input type="text" th:field="*{uzytkownikDto.miasto}">
-    miasto: <input type="hidden" th:field="*{kodPocztowy}">
-    miasto: <input type="hidden" th:field="*{panstwo}">
-    miasto: <input type="hidden" th:field="*{ulica}">
+    email (który będzie twoim loginem): <input type="text" th:field="*{loginMail}">
+    hasło: <input type="text" th:field="*{haslo}">
+    miasto: <input type="text" th:field="*{miasto}">
+    miasto: <input type="hidden" th:field="*{adresDto}">
 
     <input type="submit" value="Zatwierdz">
 </form>

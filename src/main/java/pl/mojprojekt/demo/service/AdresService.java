@@ -18,17 +18,12 @@ import java.beans.Transient;
 public class AdresService {
 
     private final AdresRepository adresRepository;
-    private final UzytkownikRepository uzytkownikRepository;
-    private final RoleRepository roleRepository;
+
     private final DtoToObjectConverters myConverters;
 
 
     public Adres createAdres(AdresDto adresDto) {
         Adres adresEntity = myConverters.adresDtoToAdresEntity(adresDto);
-//        *********************************************************
-//        Uzytkownik uzytkownikEntity = adresEntity.getUzytkownik();
-//        uzytkownikRepository.save(uzytkownikEntity);
-//         *********************************************************
         return adresRepository.save(adresEntity);
     }
 }
